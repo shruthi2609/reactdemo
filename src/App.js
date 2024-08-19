@@ -20,11 +20,39 @@ import SimpleAPICall from "./APICalls/SimpleAPICall"
 import APICallAxios from "./APICalls/APICallAxios"
 import ImageSearchAPI from "./APICalls/ImageSearchAPI"
 import ContactManager from "./ContactManager.js/ContactManager"
+import SignInComponent from "./FormExamples/SignInComponent"
+import AfterSubmit from "./FormExamples/AfterSubmit"
+import FormElements from "./FormExamples/FormElements"
+import {BrowserRouter,Link,Route,Routes} from 'react-router-dom'
+import LeaderBoard from "./ScoreBoard/LeaderBoard"
 
 function App(){
   return(
     <>
-<ContactManager></ContactManager>
+    {/* <h1>home page</h1>
+<BrowserRouter>
+<Link to="/imagesearch">Image search App</Link>
+<Link to="/todoapp">Todo App</Link>
+<Routes>
+  <Route path="/imagesearch" element={<ImageSearchAPI></ImageSearchAPI>}></Route>
+  <Route path='/todoapp' element={<TodoComponent></TodoComponent>}></Route>
+</Routes>
+</BrowserRouter> */
+<BrowserRouter>
+<Link to='/'></Link>
+<Link to='/rank'>
+<button>Rank</button></Link>
+<Link to='/name'>
+<button>Name</button></Link>
+<Link to='/age'>
+<button>Age</button></Link>
+<Link to='/points'>
+<button>Score</button></Link>
+<Routes>
+  <Route path='/' element={<LeaderBoard></LeaderBoard>}></Route>
+</Routes>
+</BrowserRouter>}
+
 
     </>
   )

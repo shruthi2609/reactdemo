@@ -10,6 +10,7 @@ class ImageSearchAPI extends React.Component{
     }
     handleChange=(e)=>{
         this.setState({search:e.target.value})
+        /** */
     }
     handleSearch=(e)=>{
         e.preventDefault()
