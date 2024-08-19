@@ -25,6 +25,12 @@ import AfterSubmit from "./FormExamples/AfterSubmit"
 import FormElements from "./FormExamples/FormElements"
 import {BrowserRouter,Link,Route,Routes} from 'react-router-dom'
 import LeaderBoard from "./ScoreBoard/LeaderBoard"
+import SortRank from "./ScoreBoard/SortRank"
+import SortAge from "./ScoreBoard/SortAge"
+import SortPoints from "./ScoreBoard/SortPoints"
+import './App.css'
+import SortName from "./ScoreBoard/SortName"
+import NavBarComponent from "./ScoreBoard/NavBarComponent"
 
 function App(){
   return(
@@ -39,17 +45,13 @@ function App(){
 </Routes>
 </BrowserRouter> */
 <BrowserRouter>
-<Link to='/'></Link>
-<Link to='/rank'>
-<button>Rank</button></Link>
-<Link to='/name'>
-<button>Name</button></Link>
-<Link to='/age'>
-<button>Age</button></Link>
-<Link to='/points'>
-<button>Score</button></Link>
+
 <Routes>
   <Route path='/' element={<LeaderBoard></LeaderBoard>}></Route>
+  <Route path='/rank' element={<SortRank></SortRank>}></Route>
+  <Route path='/age' element={<SortAge></SortAge>}></Route>
+  <Route path='/points' element={<SortPoints></SortPoints>}></Route>
+  <Route path='/name' element={<SortName></SortName>}></Route>
 </Routes>
 </BrowserRouter>}
 
