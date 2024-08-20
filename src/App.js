@@ -31,6 +31,10 @@ import SortPoints from "./ScoreBoard/SortPoints"
 import './App.css'
 import SortName from "./ScoreBoard/SortName"
 import NavBarComponent from "./ScoreBoard/NavBarComponent"
+import UserPage from "./NestedRoutes/UserPage"
+import LoginPage from "./NestedRoutes/LoginPage"
+import DashBoardComponent from "./NestedRoutes/DashBoardComponent"
+import PageNotFound from "./NestedRoutes/PageNotFound"
 
 function App(){
   return(
@@ -47,12 +51,19 @@ function App(){
 <BrowserRouter>
 
 <Routes>
-  <Route path='/' element={<LeaderBoard></LeaderBoard>}></Route>
-  <Route path='/rank' element={<SortRank></SortRank>}></Route>
-  <Route path='/age' element={<SortAge></SortAge>}></Route>
-  <Route path='/points' element={<SortPoints></SortPoints>}></Route>
-  <Route path='/name' element={<SortName></SortName>}></Route>
+  <Route path='/user'  element={<UserPage></UserPage>}>
+      <Route path='login' element={<LoginPage></LoginPage>}>
+      </Route>
+      <Route path='dashboard' element={<DashBoardComponent userdata={{
+        username:"john",
+        role:"admin"
+      } }></DashBoardComponent>}></Route>
+      <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
+  </Route>
+  <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
+
 </Routes>
+
 </BrowserRouter>}
 
 
