@@ -1,17 +1,14 @@
 import React from "react";
-class DashBoardHooks extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        const {username}=this.props.userdata
-        {console.log("child dashboard")}
-        return(
+import { useParams } from "react-router-dom";
+import DashBoardClass from "./DashBoardClass";
+function DashBoardHooks(){
+    const params=useParams()
+    return(
         <>
-        <h1>Welcome {username}</h1>
-        <button onClick={this.props.toggleFunc}>logout</button>
+        {console.log(params)}
+     <DashBoardClass data={params}></DashBoardClass>
+
         </>
-        )
-    }
+    )
 }
 export default DashBoardHooks

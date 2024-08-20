@@ -23,7 +23,7 @@ import ContactManager from "./ContactManager.js/ContactManager"
 import SignInComponent from "./FormExamples/SignInComponent"
 import AfterSubmit from "./FormExamples/AfterSubmit"
 import FormElements from "./FormExamples/FormElements"
-import {BrowserRouter,Link,Route,Routes} from 'react-router-dom'
+import {BrowserRouter,Link,NavLink,Route,Routes} from 'react-router-dom'
 import LeaderBoard from "./ScoreBoard/LeaderBoard"
 import SortRank from "./ScoreBoard/SortRank"
 import SortAge from "./ScoreBoard/SortAge"
@@ -51,10 +51,25 @@ function App(){
 </Routes>
 </BrowserRouter> */
 <BrowserRouter>
-
+<NavLink to='/login'>
+{
+  ({isActive})=>
+  (
+    <button className={isActive?'activeStatus':'.inActiveStatus'}>Login</button>
+  )
+}
+</NavLink>
+<NavLink to='/dashboard/:username/:role'>
+{
+  ({isActive})=>
+  (
+    <button className={isActive?'activeStatus':'.inActiveStatus'}>dashboard</button>
+  )
+}
+</NavLink>
 <Routes>
   <Route path='/login' element={<LoginPageFunctional></LoginPageFunctional>}></Route>
-  <Route path='/dashboard' element={<DashBoardHooks></DashBoardHooks>}></Route>
+  <Route path='/dashboard/:username/:role' element={<DashBoardHooks></DashBoardHooks>}></Route>
 </Routes>
 
 </BrowserRouter>}

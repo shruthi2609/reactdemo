@@ -14,7 +14,7 @@ class LoginPageClass extends React.Component{
     handleSubmit=(e)=>{
         const {navigate}=this.props.navigate
         e.preventDefault()
-        navigate("/dashboard")
+        navigate(`/dashboard/${this.state.username}/admin`)
       
     }
     handleValidation=(e,keyword)=>{

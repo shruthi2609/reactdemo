@@ -1,6 +1,10 @@
-button{
+.inActiveStatus{
     background-color: brown;
     padding: 15px;
     margin: 10px;
     color: aliceblue;
 }
+.activeStatus{
+    color: green;
+    background-color: aqua;
+ }
