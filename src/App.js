@@ -35,6 +35,8 @@ import UserPage from "./NestedRoutes/UserPage"
 import LoginPage from "./NestedRoutes/LoginPage"
 import DashBoardComponent from "./NestedRoutes/DashBoardComponent"
 import PageNotFound from "./NestedRoutes/PageNotFound"
+import LoginPageFunctional from "./RouterHooks/LoginPageFunctional"
+import DashBoardHooks from "./RouterHooks/DashBoardHooks"
 
 function App(){
   return(
@@ -51,17 +53,8 @@ function App(){
 <BrowserRouter>
 
 <Routes>
-  <Route path='/user'  element={<UserPage></UserPage>}>
-      <Route path='login' element={<LoginPage></LoginPage>}>
-      </Route>
-      <Route path='dashboard' element={<DashBoardComponent userdata={{
-        username:"john",
-        role:"admin"
-      } }></DashBoardComponent>}></Route>
-      <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
-  </Route>
-  <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
-
+  <Route path='/login' element={<LoginPageFunctional></LoginPageFunctional>}></Route>
+  <Route path='/dashboard' element={<DashBoardHooks></DashBoardHooks>}></Route>
 </Routes>
 
 </BrowserRouter>}
