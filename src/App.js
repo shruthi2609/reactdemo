@@ -34,9 +34,9 @@ import NavBarComponent from "./ScoreBoard/NavBarComponent"
 import UserPage from "./NestedRoutes/UserPage"
 import LoginPage from "./NestedRoutes/LoginPage"
 import DashBoardComponent from "./NestedRoutes/DashBoardComponent"
-import PageNotFound from "./NestedRoutes/PageNotFound"
-import LoginPageFunctional from "./RouterHooks/LoginPageFunctional"
-import DashBoardHooks from "./RouterHooks/DashBoardHooks"
+import PageNotFound from "./LandingComponentsRouter/PageNotFound"
+import LoginPageFunctional from "./LandingComponentsRouter/LoginPageFunctional"
+import DashBoardHooks from "./LandingComponentsRouter/DashBoardHooks"
 
 function App(){
   return(
@@ -51,7 +51,7 @@ function App(){
 </Routes>
 </BrowserRouter> */
 <BrowserRouter>
-<NavLink to='/login'>
+{/* <NavLink to='/login'>
 {
   ({isActive})=>
   (
@@ -70,8 +70,13 @@ function App(){
 <Routes>
   <Route path='/login' element={<LoginPageFunctional></LoginPageFunctional>}></Route>
   <Route path='/dashboard/:username/:role' element={<DashBoardHooks></DashBoardHooks>}></Route>
-</Routes>
+</Routes> */}
 
+<Routes>
+  <Route path='/' element={<LoginPageFunctional></LoginPageFunctional>}></Route>
+  <Route path='/dashboard/:username' element={<DashBoardHooks></DashBoardHooks>}></Route>
+  <Route path='/error' element={<PageNotFound></PageNotFound>}></Route>
+</Routes>
 </BrowserRouter>}
 
 
