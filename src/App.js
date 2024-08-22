@@ -40,47 +40,10 @@ import DashBoardHooks from "./LandingComponentsRouter/DashBoardHooks"
 
 function App(){
   return(
-    <>
-    {/* <h1>home page</h1>
-<BrowserRouter>
-<Link to="/imagesearch">Image search App</Link>
-<Link to="/todoapp">Todo App</Link>
-<Routes>
-  <Route path="/imagesearch" element={<ImageSearchAPI></ImageSearchAPI>}></Route>
-  <Route path='/todoapp' element={<TodoComponent></TodoComponent>}></Route>
-</Routes>
-</BrowserRouter> */
-<BrowserRouter>
-{/* <NavLink to='/login'>
-{
-  ({isActive})=>
-  (
-    <button className={isActive?'activeStatus':'.inActiveStatus'}>Login</button>
+    <ContactManager></ContactManager>
   )
-}
-</NavLink>
-<NavLink to='/dashboard/:username/:role'>
-{
-  ({isActive})=>
-  (
-    <button className={isActive?'activeStatus':'.inActiveStatus'}>dashboard</button>
-  )
-}
-</NavLink>
-<Routes>
-  <Route path='/login' element={<LoginPageFunctional></LoginPageFunctional>}></Route>
-  <Route path='/dashboard/:username/:role' element={<DashBoardHooks></DashBoardHooks>}></Route>
-</Routes> */}
 
-<Routes>
-  <Route path='/' element={<LoginPageFunctional></LoginPageFunctional>}></Route>
-  <Route path='/dashboard/:username' element={<DashBoardHooks></DashBoardHooks>}></Route>
-  <Route path='/error' element={<PageNotFound></PageNotFound>}></Route>
-</Routes>
-</BrowserRouter>}
-
-
-    </>
-  )
+   
+  
 }
 export default App
